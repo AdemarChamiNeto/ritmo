@@ -5,7 +5,7 @@
   --surface: #403c38;
   --border: #4a4742;
   --ink: #d4d1cb;
-  --muted: #a8a39b;
+  --muted: #aea9a1; /* 4,7:1 sobre o --surface (mínimo WCAG AA: 4,5:1) */
   --brand: #371e1e;
   --brand-2: #0a0a0a;
   /* acento para metas atingidas e progresso — antes tudo era o mesmo cinza */

@@ -11,8 +11,11 @@ import App from "./App";
 import { makeStore } from "./store";
 import { loadData } from "./store/persistence";
 import "./styles.css";
+import { initConsent } from "./consent";
 
 registerSW({ immediate: true });
+// GA4 só depois do aceite (e só se VITE_GA_ID estiver configurado no build)
+initConsent(`${import.meta.env.BASE_URL}privacidade.html`);
 
 // carrega os dados do IndexedDB antes de montar, para não piscar a tela de "configure"
 loadData().then((data) => {

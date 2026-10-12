@@ -1,0 +1,8 @@
+# Ritmo
+
+> Aplicativo web instalável (PWA) para acompanhar um tratamento com GLP-1: doses, peso, sintomas, água e alimentação. Funciona offline e guarda tudo só no aparelho. Projeto de portfólio de Ademar Chami Neto, feito em React e TypeScript.
+
+- [Ritmo (app)](https://ademarchamineto.github.io/ritmo/): abre pedindo a configuração inicial; tudo o que é digitado fica no navegador do aparelho (IndexedDB).
+- [Privacidade](https://ademarchamineto.github.io/ritmo/privacidade.html): os dados de saúde não saem do aparelho.
+- [Código-fonte](https://github.com/AdemarChamiNeto/ritmo)
+- [Portfólio do autor](https://ademarchamineto.github.io/)

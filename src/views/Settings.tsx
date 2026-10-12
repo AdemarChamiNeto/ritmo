@@ -80,6 +80,7 @@ export default function Settings() {
 
       <p className="hint" style={{ textAlign: "center" }}>
         O Ritmo é uma ferramenta de registro pessoal e não substitui orientação médica.
+        <br /><a href={`${import.meta.env.BASE_URL}privacidade.html`}>Privacidade</a> · seus dados ficam só neste aparelho
       </p>
       <ConfigForm open={open} onClose={() => setOpen(false)} />
     </section>

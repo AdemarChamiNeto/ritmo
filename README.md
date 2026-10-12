@@ -23,6 +23,7 @@ App para quem faz tratamento com GLP-1 (Ozempic, Mounjaro, Wegovy etc.) acompanh
 - **Nutrição:** refeições por tipo, calorias e macros, meta de proteína com barra de progresso, e navegação entre semanas.
 - **Relatório para o médico:** 30, 60 ou 90 dias, com impressão ou PDF em layout próprio para papel.
 - **Backup:** exporta e importa um JSON e migra automaticamente os dados da versão antiga (arquivo HTML único).
+- **Pronto para publicar:** ícones (favicon, Apple, PWA com ícone *maskable*), Open Graph 1200×630, JSON-LD (`WebApplication`), sitemap, `llms.txt`, página 404 e página de privacidade. Lighthouse 95 em performance e 100 em acessibilidade, boas práticas e SEO.
 
 ## Arquitetura
 
@@ -55,13 +56,15 @@ src/
   - cada label está ligado ao seu campo;
   - gráficos têm `aria-label`;
   - o zoom do celular não é bloqueado.
+  - texto secundário com contraste de pelo menos 4,5:1 (WCAG AA).
+- **Estatísticas só com consentimento, e só o GA4.** O Google Analytics carrega apenas depois de "Aceitar" (e só se `VITE_GA_ID` estiver configurado), contando visitas e páginas. O Microsoft Clarity ficou **de fora de propósito**: ele grava a sessão, ou seja, o que aparece na tela, e aqui a tela mostra dados de saúde, que são sensíveis pela LGPD.
 
 ## Rodando
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # 25 testes (domínio, store, persistência e interface)
+npm test           # 30 testes (domínio, store, persistência e interface)
 npm run lint
 npm run build      # gera dist/ com service worker
 ```
@@ -71,6 +74,8 @@ npm run build      # gera dist/ com service worker
 O workflow `.github/workflows/deploy.yml` roda lint, testes e build a cada push. Na branch `main`, ele publica no GitHub Pages.
 
 Para ativar, vá em **Settings → Pages → Source: GitHub Actions**.
+
+GA4 (opcional): crie a variável `VITE_GA_ID` em **Settings → Secrets and variables → Actions → Variables**. O ID é público, por isso é variável e não segredo.
 
 ## Próximos passos
 

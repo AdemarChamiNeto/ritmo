@@ -29,6 +29,8 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
+          # ID público do GA4 (Settings → Secrets and variables → Actions → Variables). Vazio = sem analytics.
+          VITE_GA_ID: ${{ vars.VITE_GA_ID }}
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

@@ -4,3 +4,8 @@ dev-dist/
 coverage/
 *.log
 .DS_Store
+
+# variáveis locais (nunca no Git)
+.env
+.env.*
+!.env.example

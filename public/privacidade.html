@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacidade — Ritmo</title>
+    <meta name="description" content="Os dados de saúde que você registra no Ritmo ficam só no seu aparelho." />
+    <link rel="canonical" href="https://ademarchamineto.github.io/ritmo/privacidade.html" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <style>
+      body { margin: 0; background: #0a0a0a; color: #f5f5f5; font: 16px/1.6 system-ui, sans-serif; }
+      main { max-width: 720px; margin: 0 auto; padding: 32px 20px 48px; }
+      h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.8em; }
+      a { color: #d9a55b; } button { font: inherit; padding: 6px 12px; border-radius: 8px; border: 1px solid #555; background: transparent; color: inherit; cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p><a href="./">← Voltar ao Ritmo</a></p>
+      <h1>Privacidade</h1>
+      <p>O Ritmo é um projeto de portfólio. <strong>Não existe cadastro, login nem servidor</strong> recebendo o que você registra.</p>
+
+      <h2>Seus dados de saúde ficam no aparelho</h2>
+      <ul>
+        <li>Doses, peso, sintomas, água, alimentação e configurações são guardados no <strong>IndexedDB do navegador</strong>, só neste aparelho. Nada disso é enviado para lugar nenhum.</li>
+        <li>O backup (exportar/importar em <em>Ajustes</em>) gera um arquivo que fica com você.</li>
+        <li>Para apagar tudo, use <em>Ajustes → Apagar dados</em> (ou limpe os dados do site no navegador).</li>
+      </ul>
+
+      <h2>Estatísticas de uso (opcional)</h2>
+      <p>Se aparecer um aviso de cookies, o site está configurado com o <strong>Google Analytics 4</strong>. Ele só é carregado se você clicar em <em>Aceitar</em> e conta apenas visitas e páginas abertas. <strong>Os dados de saúde nunca são enviados.</strong> Se você recusar, nada é carregado.</p>
+      <p>O Ritmo não usa ferramentas de gravação de sessão (como o Microsoft Clarity), justamente porque a tela mostra dados de saúde.</p>
+      <p><button type="button" id="rever">Rever minha escolha de cookies</button> <span id="ok" role="status"></span></p>
+
+      <h2>Aviso</h2>
+      <p>O Ritmo ajuda a organizar o acompanhamento, mas não substitui a orientação do seu médico.</p>
+
+      <h2>Contato</h2>
+      <p>Pelo <a href="https://ademarchamineto.github.io/">portfólio do autor</a>.</p>
+    </main>
+    <script>
+      document.getElementById("rever").addEventListener("click", function () {
+        try { localStorage.removeItem("consent-analytics"); } catch (e) {}
+        document.getElementById("ok").textContent = "Pronto: o aviso aparece de novo quando você voltar ao app.";
+      });
+    </script>
+  </body>
+</html>
